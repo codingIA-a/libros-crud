@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/create/author" method="post">
+        <label for="nombre">Name: </label>
+        <input type="text" name="nombre" id="">
+        <button>Create</button>
+    </form>
+    <div>
+        <h1>All Authors</h1>
+        {% for autor in autores %}
+            <a href="/authors/{{autor.id}}">{{autor.name}}</a><br><br>
+        {% endfor %}
+    </div>
+    <br><br>
+    <a href="{{url_for('books')}}">Add book</a>
+    
+</body>
+</html>
